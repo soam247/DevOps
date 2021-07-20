@@ -1,0 +1,18 @@
+---
+general:
+  pipeline: "sap-ui5-cf"
+stages:
+  testStage:
+    enable: false
+  deployStage:
+    enable: false
+  tmsStage:
+    enable: true
+  malwareScanStage:
+    enable: true
+steps:
+  mtaBuild:
+    applicationName: ""
+  tmsUpload:
+    nodeName: "DevOps"
+    credentialsId: "ctmstest"
