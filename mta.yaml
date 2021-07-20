@@ -1,0 +1,56 @@
+_schema-version: "3.2"
+ID: csm-demo-202002-plan-fiori
+version: 0.0.1
+modules:
+- name: csm-demo-202002-plan-fiori-approuter
+  type: approuter.nodejs
+  path: csm-demo-202002-plan-fiori-approuter
+  requires:
+  - name: csm-demo-202002-plan-fiori_html_repo_runtime
+  - name: dest_csm-demo-202002-plan-fiori
+  parameters:
+    disk-quota: 256M
+    memory: 256M
+- name: csm-demo-202002-plan-fiori_ui_deployer
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: csm-demo-202002-plan-fiori_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - EnergyProductionPlan-content.zip
+      name: EnergyProductionPlan
+      target-path: resources/
+- name: EnergyProductionPlan
+  type: html5
+  path: EnergyProductionPlan
+  build-parameters:
+    builder: custom
+    commands:
+    - npm run build
+    supported-platforms: []
+resources:
+- name: csm-demo-202002-plan-fiori_html_repo_runtime
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-runtime
+- name: csm-demo-202002-plan-fiori_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-host
+- name: dest_csm-demo-202002-plan-fiori
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: destination
+    service-plan: lite
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npm install

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0"
+    xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="ProductionPlanValuesService"
+            xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Values" EntityType="ProductionPlanValuesService.Values"/>
+            </EntityContainer>
+            <EntityType Name="Values">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="DAY" Type="Edm.Int32"/>
+                <Property Name="MONTH" Type="Edm.Int32"/>
+                <Property Name="YEAR" Type="Edm.Int32"/>
+                <Property Name="WEEKDAY" Type="Edm.Int32"/>
+                <Property Name="WEEKNUM" Type="Edm.Int32"/>
+                <Property Name="WEEKEND_YN" Type="Edm.String"/>
+                <Property Name="HOUR" Type="Edm.Int32"/>
+                <Property Name="MINUTE" Type="Edm.Int32"/>
+                <Property Name="BIOMASS_PROD_PLANNED" Type="Edm.Double"/>
+                <Property Name="HYDROPOWER_PROD_PLANNED" Type="Edm.Double"/>
+                <Property Name="WIND_OFFSHORE_PROD_PLANNED" Type="Edm.Double"/>
+                <Property Name="WIND_ONSHORE_PROD_PLANNED" Type="Edm.Double"/>
+                <Property Name="PHOTOVOLTAICS_PROD_PLANNED" Type="Edm.Double"/>
+                <Property Name="OTHER_RENEWABLE_PROD_PLANNED" Type="Edm.Double"/>
+                <Property Name="NUCLEAR_PROD_PLANNED" Type="Edm.Double"/>
+                <Property Name="BROWN_COAL_PROD_PLANNED" Type="Edm.Double"/>
+                <Property Name="BLACK_COAL_PROD_PLANNED" Type="Edm.Double"/>
+                <Property Name="NAT_GAS_PROD_PLANNED" Type="Edm.Double"/>
+                <Property Name="PUMP_STORAGE_PROD_PLANNED" Type="Edm.Double"/>
+                <Property Name="OTHER_CONVENTIONAL_PROD_PLANNED" Type="Edm.Double"/>
+                <Property Name="EN_PROD_PLANNED" Type="Edm.Double"/>
+            </EntityType>
+            <Annotations Target="ProductionPlanValuesService.Values">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.CollectionFacet">
+                            <PropertyValue Property="Label" String="Value Info"/>
+                            <PropertyValue Property="Facets">
+                                <Collection>
+                                    <Record Type="UI.ReferenceFacet">
+                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#Main"/>
+                                        <PropertyValue Property="Label" String="Main Facet"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="Main">
+                    <Record Type="UI.FieldGroupType">
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="YEAR"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="MONTH"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="WEEKDAY"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="WEEKNUM"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="WEEKEND_YN"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="DAY"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="HOUR"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="MINUTE"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="EN_PROD_PLANNED"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record Type="UI.HeaderInfoType">
+                        <PropertyValue Property="Description">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="DAY"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="MONTH"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="TypeName" String="Value"/>
+                        <PropertyValue Property="TypeNamePlural" String="Values"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="YEAR"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MONTH"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="DAY"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="HOUR"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="MINUTE"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="EN_PROD_PLANNED"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>MONTH</PropertyPath>
+                        <PropertyPath>DAY</PropertyPath>
+                        <PropertyPath>HOUR</PropertyPath>
+                        <PropertyPath>MINUTE</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

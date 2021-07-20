@@ -1,0 +1,36 @@
+# CAP csm-demo-202002
+_out
+*.db
+connection.properties
+default-*.json
+mta_archives/
+node_modules/
+resources/
+
+mta_archives
+node_modules
+resources
+
+# Web IDE, App Studio
+.che/
+.gen/
+
+# MTA
+*_mta_build_tmp
+*.mtar
+mta_archives/
+
+# Other
+.DS_Store
+*.orig
+*.log
+
+*.iml
+*.flattened-pom.xml
+
+# IDEs
+# .vscode
+# .idea
+
+# auto generated wildcard
+gen/db/.env

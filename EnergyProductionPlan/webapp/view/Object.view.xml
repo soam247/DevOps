@@ -1,0 +1,74 @@
+<mvc:View
+	controllerName="ns.EnergyProductionPlan.controller.Object"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core" 
+	xmlns:semantic="sap.f.semantic"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:tnt="sap.tnt">
+    <Page showNavButton="true" navButtonPress="onNavBack" title="{i18n>update}">
+            <headerContent>
+                <Title text="{YEAR}-{MONTH}-{DAY} {HOUR}:{MINUTE}" />
+                <Button icon="sap-icon://delete" tooltip="Delete" text="Delete" type="Transparent" press=".onDelete(${ID})"/>
+                <Button icon="sap-icon://save" tooltip="Save" text="Save" type="Transparent" press=".onSave(${ID})"/>
+            </headerContent>
+            <f:Form editable="true">
+				    <f:layout>
+					<f:ResponsiveGridLayout backgroundDesign="Solid" labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false"
+					    emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="true"/>
+				    </f:layout>
+				    <f:formContainers>
+					<f:FormContainer>
+					    <f:formElements>
+						<f:FormElement label="Year">
+						    <f:fields>
+							<Input id="YEAR" value="{YEAR}" required="true" liveChange="onInput"/>
+						    </f:fields>
+						</f:FormElement>
+						<f:FormElement label="Month">
+						    <f:fields>
+							<Input type="Number" id="MONTH" value="{MONTH}" required="true" liveChange="onInput"/>
+						    </f:fields>
+						</f:FormElement>
+						<f:FormElement label="Day">
+						    <f:fields>
+							<Input type="Number" id="DAY" value="{DAY}" required="true" liveChange="onInput"/>
+						    </f:fields>
+						</f:FormElement>
+						<f:FormElement label="Weekday">
+						    <f:fields>
+							<Input type="Number" id="WEEKDAY" value="{WEEKDAY}" required="true" liveChange="onInput"/>
+						    </f:fields>
+						</f:FormElement>
+                        <f:FormElement label="Week Num">
+						    <f:fields>
+							<Input type="Number" id="WEEKNUM" value="{WEEKNUM}" required="true" liveChange="onInput"/>
+						    </f:fields>
+						</f:FormElement>
+                        <f:FormElement label="WEEKEND YN">
+						    <f:fields>
+							<Input id="WEEKEND_YN" value="{WEEKEND_YN}" required="true" liveChange="onInput"/>
+						    </f:fields>
+						</f:FormElement>
+                        <f:FormElement label="Hour">
+						    <f:fields>
+							<Input type="Number" id="HOUR" value="{HOUR}" required="true" liveChange="onInput"/>
+						    </f:fields>
+						</f:FormElement>
+                        <f:FormElement label="Minute">
+						    <f:fields>
+							<Input type="Number" id="MINUTE" value="{MINUTE}" required="true" liveChange="onInput"/>
+						    </f:fields>
+						</f:FormElement>
+                        <f:FormElement label="Total Planned">
+                            <f:fields>
+							<Input id="EN_PROD_PLANNED" value="{EN_PROD_PLANNED}" required="true" liveChange="onInput"/>
+						    </f:fields>
+						</f:FormElement>
+					    </f:formElements>
+					</f:FormContainer>
+			    </f:formContainers>
+			</f:Form>
+        </Page>
+</mvc:View>

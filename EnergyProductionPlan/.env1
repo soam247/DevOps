@@ -1,0 +1,1 @@
+destinations=[{"name":"csm-demo-202002-plan-srv","url":"https://csm-demo-202002-plan-srv.dest","proxyHost":"http://127.0.0.1","proxyPort":"8887"}]
