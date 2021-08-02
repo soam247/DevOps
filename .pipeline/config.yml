@@ -3,7 +3,7 @@ general:
   pipeline: "sap-ui5-cf"
 stages:
   testStage:
-    enable: true
+    enable: false
   deployStage:
     enable: true
   tmsStage:
