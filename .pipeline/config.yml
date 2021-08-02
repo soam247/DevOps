@@ -3,9 +3,9 @@ general:
   pipeline: "sap-ui5-cf"
 stages:
   testStage:
-    enable: false
+    enable: true
   deployStage:
-    enable: false
+    enable: true
   tmsStage:
     enable: true
   malwareScanStage:
@@ -13,6 +13,12 @@ stages:
 steps:
   mtaBuild:
     applicationName: ""
+  cloudFoundryDeploy:
+    cloudFoundry:
+      apiEndpoint: "https://api.cf.eu10.hana.ondemand.com"
+      org: "0d46997dtrial"
+      space: "dev"
+      credentialsId: "cockpitaccess"
   tmsUpload:
-    nodeName: "DevOps"
+    nodeName: "QAS_Upload"
     credentialsId: "ctmstest"
