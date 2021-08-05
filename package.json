@@ -15,4 +15,8 @@
       "@sap/ui5-builder-webide-extension"
     ]
   }
+  "scripts": {
+    "test": "uiveri5"
+}
+
 }
