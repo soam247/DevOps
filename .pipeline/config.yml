@@ -20,5 +20,5 @@ steps:
       space: "dev"
       credentialsId: "cockpitaccess"
   tmsUpload:
-    nodeName: "QAS_Upload"
+    nodeName: "QLT_Upload"
     credentialsId: "ctmstest"
