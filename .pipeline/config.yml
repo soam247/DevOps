@@ -5,7 +5,7 @@ stages:
   testStage:
     enable: false
   deployStage:
-    enable: true
+    enable: false
   tmsStage:
     enable: true
   malwareScanStage:
@@ -13,12 +13,7 @@ stages:
 steps:
   mtaBuild:
     applicationName: ""
-  cloudFoundryDeploy:
-    cloudFoundry:
-      apiEndpoint: "https://api.cf.eu10.hana.ondemand.com"
-      org: "0d46997dtrial"
-      space: "dev"
-      credentialsId: "cockpitaccess"
   tmsUpload:
-    nodeName: "QLT_Upload"
+    nodeName: "QLT_Upload_Day"
     credentialsId: "ctmstest"
+
