@@ -14,6 +14,6 @@ steps:
   mtaBuild:
     applicationName: ""
   tmsUpload:
-    nodeName: "QLT_Upload"
+    nodeName: "QLT_Upload_Week"
     credentialsId: "ctmstest"
 
