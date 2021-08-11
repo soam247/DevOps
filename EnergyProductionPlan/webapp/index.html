@@ -21,5 +21,19 @@
 
 <body class="sapUiBody">
 	<div data-sap-ui-component data-name="ns.EnergyProductionPlan" data-id="container" data-settings='{"id" : "EnergyProductionPlan"}'></div>
+<script>
+    var swa = {
+        pubToken: 'ad810628-11af-4d0f-bab0-96bbb41cca03',
+        baseUrl: 'https://events.web-analytics.cfapps.eu10.hana.ondemand.com/tracker/',
+        owner: null 
+        //set this to a function that returns the identifier of the tracked user
+    };
+   (function(){
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.defer=true; g.async=true; g.src=swa.baseUrl+'js/track.js';
+        s.parentNode.insertBefore(g,s);
+     })();
+</script>
+
 </body>
 </html>
